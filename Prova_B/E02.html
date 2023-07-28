@@ -7,12 +7,22 @@
 
     *Não há valor definido para o litro da água.
     */
-    
-    //Entrada
 
+    //Entrada
+    const litrosSemana = Number(prompt('Quantos litros de água são consumidos diariamente na sua residência?').trim());
+    const pessoas = Number(prompt('Quantas pessoas moram na sua residência?').trim());
+    const litrosPessoa = litrosSemana / pessoas;
 
     //Processamento
-
+    if (litrosPessoa > 300 && litrosPessoa <= 500) {
+        alert('A residência será penalizada em 15% na tarifa de aguá pelo alto consumo de litros de água por pessoa.');
+    }
+    else if (litrosPessoa > 500) {
+        alert('A residência será penalizada em 30% na tarifa de aguá pelo alto consumo de litros de água por pessoa.');
+    }
+    else {
+        alert('Parabéns pelo consumo consciente de água!');
+    }
 
     //Saída
 

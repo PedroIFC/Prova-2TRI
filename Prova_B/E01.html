@@ -7,12 +7,40 @@
     Peça para o usuário informar quantos computadores ele deseja comprar e também pergunte se pagará em dinheiro. Se o pagamento for em dinheiro, a loja dá mais 5% de desconto no valor total da compra.
     Calcule e apresente o valor total que o usuário deverá pagar pelos computadores.
     */
-    
-    //Entrada
 
+    //Entrada
+    const computadores = Number(prompt('Quantos computadores você deseja comprar?').trim());
+    const formaPagamento = prompt('Você pagará em dinheiro vivo?(Responda com S ou N)').trim().toUpperCase();
 
     //Processamento
+    if (computadores > 5 && computadores < 10) {
+        if (formaPagamento == "S") {
+            alert(`Você pagará no total R$${((computadores * 1500) * 0.85).toFixed(2).replace(".", ",")} pelos ${computadores} computadores.`);
+        }
+        else {
+            alert(`Você pagará no total R$${((computadores * 1500) * 0.90).toFixed(2).replace(".", ",")} pelos ${computadores} computadores.`);
+        }
 
+    }
+    else if (computadores > 10) {
+        if (formaPagamento == "S") {
+            alert(`Você pagará no total R$${((computadores * 1500) * 0.80).toFixed(2).replace(".", ",")} pelos ${computadores} computadores.`);
+        }
+        else {
+            alert(`Você pagará no total R$${((computadores * 1500) * 0.85).toFixed(2).replace(".", ",")} pelos ${computadores} computadores.`);
+        }
+    }
+    else if (computadores <= 5) {
+        if (formaPagamento == "S") {
+            alert(`Você pagará no total R$${((computadores * 1500) * 0.95).toFixed(2).replace(".", ",")} pelos ${computadores} computadores.`);
+        }
+        else {
+            alert(`Você pagará no total R$${(computadores * 1500).toFixed(2).replace(".", ",")} pelos ${computadores} computadores.`);
+        }
+    }
+    else {
+        alert('Valores Inválidos! Responda apenas com S ou N');
+    }
 
     //Saída
 

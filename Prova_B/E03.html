@@ -6,13 +6,35 @@
     Considere que, se a quantidade for superior a 80 conjuntos, 5 serão doados pelos vendedores. Se a quantidade for superior a 100 conjuntos, 10 serão doados pelos vendedores.
     Calcule o valor total da compra em cada loja e apresente ao usuário qual loja possui o menor valor total da compra.
     */
-    
-    //Entrada
 
+    //Entrada
+    const lojaUm = Number(prompt('Informe o preço do conjunto carteira + cadeira na loja 1:').trim());
+    const lojaDois = Number(prompt('Informe o preço do conjunto carteira + cadeira na loja 2:').trim());
+    const lojaTres = Number(prompt('Informe o preço do conjunto carteira + cadeira na loja 3:').trim());
+    const conjunto = Number(prompt('Quantos conjuntos deseja comprar?').trim());
+    let lojaBarata = ""
 
     //Processamento
 
+    if ((lojaUm * conjunto) < (lojaDois * conjunto) && (lojaUm * conjunto) < (lojaTres * conjunto)) {
+        lojaBarata += "loja 1";
+    }
+    if ((lojaDois * conjunto) < (lojaUm * conjunto) && (lojaDois * conjunto) < (lojaTres * conjunto)) {
+        lojaBarata += "loja 2";
+    }
+    if ((lojaTres * conjunto) < (lojaDois * conjunto) && (lojaTres * conjunto) < (lojaUm * conjunto)) {
+        lojaBarata += "loja 3";
+    }
 
+    if (conjunto > 80 && conjunto <= 100) {
+        document.write(`O valor da compra na loja 1 será de R$${((conjunto * lojaUm) - (lojaUm * 5)).toFixed(2).replace(".", ",")}<br>O valor da compra na loja 2 será de R$${((conjunto * lojaDois) - (lojaDois * 5)).toFixed(2).replace(".", ",")}<br>O valor da compra na loja 3 será de R$${((conjunto * lojaTres) - (lojaTres * 5)).toFixed(2).replace(".", ",")}`);
+        alert(`O menor valor para compra é o da ${lojaBarata}`);
+
+    }
+    else if (conjunto > 100) {
+        document.write(`O valor da compra na loja 1 será de R$${((conjunto * lojaUm) - (lojaUm * 10)).toFixed(2).replace(".", ",")}<br>O valor da compra na loja 2 será de R$${((conjunto * lojaDois) - (lojaDois * 10)).toFixed(2).replace(".", ",")}<br>O valor da compra na loja 3 será de R$${((conjunto * lojaTres) - (lojaTres * 10)).toFixed(2).replace(".", ",")}`);
+        alert(`A loja que tem o menor valor total de compra é a ${lojaBarata} `);
+    }
     //Saída
 
 </script>

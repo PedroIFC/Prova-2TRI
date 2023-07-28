@@ -8,13 +8,20 @@
     Calcule quantos litros terá consumido durante o mês e qual o valor total gasto com combustível, considerando que o litro de combustível custa R$ 5,99.
     Se o custo ultrapassar R$ 200,00 o programa deverá sugerir que ele mude a sua residência para Araquari. Caso contrário, o programa deverá sugerir que ele continue residindo em Joinville.
     */
-    
-    //Entrada
 
+    //Entrada
+    const autonomia = Number(prompt('Qual é a autonomia do veículo? (km po litro de combustível)').trim());
 
     //Processamento
+    let litrosPorMes = 1100 / autonomia;
+    let valorGasto = litrosPorMes * 5.99
 
-
+    if (valorGasto > 200) {
+        alert('Sugiro que mude a sua residência para Araquari.');
+    }
+    else {
+        alert('Sugiro que continue morando em Joinville.');
+    }
     //Saída
 
 </script>
